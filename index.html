@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Online Courses</title>
+
+  <style>
+    /* ====== GLOBAL ====== */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    /* ====== NAVBAR ====== */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    nav h1 {
+      color: #00e6e6;
+      margin: 0;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00e6e6;
+    }
+
+    /* ====== HERO ====== */
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: fadeIn 2s ease;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      opacity: 0.9;
+    }
+
+    .hero button {
+      margin-top: 20px;
+      padding: 14px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      background: #00e6e6;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      background: #00b3b3;
+    }
+
+    /* ====== COURSES ====== */
+    section {
+      padding: 80px 40px;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #00e6e6;
+    }
+
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      transition: transform 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-15px) scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      margin-top: 0;
+    }
+
+    .card-content p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .card-content button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #00e6e6;
+      cursor: pointer;
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      font-size: 14px;
+    }
+
+    /* ====== ANIMATIONS ====== */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <h1>Free Courses</h1>
+    <div style="color: #00e6e6; font-weight: bold; margin-left: 20px;">Rubab Sadiq</div>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#courses">Courses</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero" id="home">
+    <div>
+      <h2>Learn Front End Development</h2>
+      <p>Free HTML, CSS & JavaScript Courses</p>
+      <button onclick="scrollToCourses()">Explore Courses</button>
+    </div>
+  </div>
+
+  <!-- COURSES -->
+  <section id="courses">
+    <h2>Popular Free Courses</h2>
+
+    <div class="courses">
+
+      <!-- HTML -->
+      <div class="card">
+        <img src="https://i.imgur.com/8Km9tLL.jpg">
+        <div class="card-content">
+          <h3>HTML Complete Course</h3>
+          <p>Learn HTML from scratch with free online tutorials.</p>
+          <button onclick="openCourse('https://www.w3schools.com/html/')">Start Course</button>
+        </div>
+      </div>
+
+      <!-- CSS -->
+      <div class="card">
+        <img src="https://i.imgur.com/Qd4H6BJ.jpg">
+        <div class="card-content">
+          <h3>CSS Mastery</h3>
+          <p>Design beautiful websites using modern CSS.</p>
+          <button onclick="openCourse('https://www.freecodecamp.org/learn/responsive-web-design/')">Start
+            Course</button>
+        </div>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="card">
+        <img src="https://i.imgur.com/Rz9YJYk.jpg">
+        <div class="card-content">
+          <h3>JavaScript Basics</h3>
+          <p>Learn JavaScript programming step by step.</p>
+          <button onclick="openCourse('https://www.javascript.info/')">Start Course</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Free Online Courses | Educational Purpose Only
+  </footer>
+
+  <script>
+    function openCourse(link) {
+      alert("You are being redirected to a free external course");
+      window.open(link, "_blank");
+    }
+
+    function scrollToCourses() {
+      document.getElementById("courses").scrollIntoView({behavior: "smooth"});
+    }
+  </script>
+
+</body>
+
+</html>
